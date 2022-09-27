@@ -1,4 +1,4 @@
-const assertEqual = function(actual, expected) {
+const assertEqual = function (actual, expected) {
   if (actual === expected) {
     console.log(`🌈 Assertion Passed ${actual} === ${expected}`);
   }
@@ -25,7 +25,7 @@ const assertEqual = function(actual, expected) {
   console.log(arrTwo)
 } 
 
-*//*
+*/ /*
 const eqArrays = function (arr , arrTwo) {
   let nArr = [];
   let nArrTwo = [];
@@ -42,18 +42,20 @@ const eqArrays = function (arr , arrTwo) {
 } 
 */
 
-const eqArrays = function (arr , arrTwo) {
+const eqArrays = function (arr, arrTwo) {
   if (arr.length !== arrTwo.length) {
-    return false
-  } else {
-    for (let i = 0; i < arr.length; i++) 
-      if (arr[i] !== arrTwo[i]) {
-       return false
-     } else {
-        return true
+    return false;
   }
+
+  for (let i = 0; i < arr.length - 1; i++) {
+    if (arr[i] !== arrTwo[i]) {
+      return false;
+    }
+
+    return true;
   }
-}
+};
+
 /*
 const eqArrays = function (arr , arrTwo) {
   if (arr === arrTwo) {
@@ -63,9 +65,16 @@ const eqArrays = function (arr , arrTwo) {
   }
 }
 */
-console.log(assertEqual(eqArrays([1, 2, 3], [1, 2, 3]))) // => true
-console.log(assertEqual(eqArrays([1, 2, 3], [3, 2, 1]))) // => false
+(assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true)); // => true
+const equal = assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true);
 
-console.log(assertEqual(eqArrays(["1", "2", "3"], ["1", "2", "3"]))) // => true
-console.log(assertEqual(eqArrays(["1", "2", "3"], ["1", "2", 3]))) // => false
-console.log(assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true)); // => should PASS
+(assertEqual(eqArrays([1, 2, 3], [3, 2, 1]), false)); // => false
+
+(assertEqual(eqArrays(["1", "2", "3"], ["1", "2", "3"]), true)); // => true
+
+
+(assertEqual(eqArrays(["1", "2", "3"], ["1", "2", 3]), false)); // => false
+(assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true)); // => should PASS
+
+const result = eqArrays(["1", "2", "3"], ["1", "2", 3]);
+(result)
