@@ -14,7 +14,6 @@ const countLetters = function (sentence) {
     if (letter !== " ") {
       if (result[letter]) {
         result[letter] += 1;
-        console.log(letter);
       } else {
         result[letter] = 1;
       }
