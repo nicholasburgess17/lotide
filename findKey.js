@@ -38,7 +38,7 @@ const findKey = function (outerObject, callback) {
   }*/
      return undefined
 };
-
+//test
 const myObject = {
   "Blue Hill": { stars: 1 },
   "Akaleri":   { stars: 3 },
