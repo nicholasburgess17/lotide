@@ -1,4 +1,4 @@
-const assertEqual = function(actual, expected) {
+const assertEqual = function (actual, expected) {
   if (actual === expected) {
     console.log(`🌈 Assertion Passed ${actual} === ${expected}`);
   }
@@ -8,17 +8,16 @@ const assertEqual = function(actual, expected) {
 };
 
 //looking for a key that holds an inner object containing a value ran through my callback
-    // loop through first oject
-    // loop through second object(dont need)
-    // see if any of the values match my callback 
-    //(does the inner object meet the callbacks conditions)
-  
+// loop through first oject
+// loop through second object(dont need)
+// see if any of the values match my callback
+//(does the inner object meet the callbacks conditions)
 
 const findKey = function (outerObject, callback) {
-  for(const [outerKey, innerObject] of Object.entries(outerObject)) {
+  for (const [outerKey, innerObject] of Object.entries(outerObject)) {
     if (callback(innerObject)) {
-     // console.log(outerKey)
-      return outerKey
+      // console.log(outerKey)
+      return outerKey;
     }
   } /*
 
@@ -36,45 +35,44 @@ const findKey = function (outerObject, callback) {
 
     
   }*/
-     return undefined
+  return undefined;
 };
 //test
 const myObject = {
   "Blue Hill": { stars: 1 },
-  "Akaleri":   { stars: 3 },
-  "noma":      { stars: 2},
-  "elBulli":   { stars: 3 },
-  "Ora":       { stars: 2 },
-  "Akelarre":  { stars: 3 }
-}
+  Akaleri: { stars: 3 },
+  noma: { stars: 2 },
+  elBulli: { stars: 3 },
+  Ora: { stars: 2 },
+  Akelarre: { stars: 3 },
+};
 
 const myCallback = (secondObject) => {
-  return secondObject.stars === 2
-}
+  return secondObject.stars === 2;
+};
 
-const result = findKey(myObject, myCallback) // => "noma
+const result = findKey(myObject, myCallback); // => "noma
 
-console.log(result)
+console.log(result);
 
 const anotherObject = {
-  "Blue Hill": { stars: "banana"},
-  "Akaleri":   { stars: "orange" },
-  "noma":      { stars: "you"},
-  "elBulli":   { stars: "glad" },
-  "Ora":       { stars: "i" },
-  "Akelarre":  { stars: "didnt" },
-  "3:10 to yuma":      { stars: "say"},
-  "the dark knight":   { stars: "banana" },
-}
+  "Blue Hill": { stars: "banana" },
+  Akaleri: { stars: "orange" },
+  noma: { stars: "you" },
+  elBulli: { stars: "glad" },
+  Ora: { stars: "i" },
+  Akelarre: { stars: "didnt" },
+  "3:10 to yuma": { stars: "say" },
+  "the dark knight": { stars: "banana" },
+};
 const myCallback2 = (secondObject) => {
-  return secondObject.stars === "say"
-}
+  return secondObject.stars === "say";
+};
 
+const result2 = findKey(myObject, myCallback2); // => "undefined"
 
-  const result2 = findKey(myObject, myCallback2) // => "undefined"
+console.log(result2);
 
-  console.log(result2);
+const result3 = findKey(anotherObject, myCallback2); // => "say" > 3:10 to yuma
 
-  const result3 = findKey(anotherObject, myCallback2) // => "say" > 3:10 to yuma
-
-  console.log(result3);
+console.log(result3);
