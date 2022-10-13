@@ -1,30 +1,6 @@
-const eqArrays = function (arr, arrTwo) {
-  if (arr.length !== arrTwo.length) {
-    return false;
-  }
-
-  for (let i = 0; i < arr.length - 1; i++) {
-    if (arr[i] !== arrTwo[i]) {
-      return false;
-    }
-
-    return true;
-  }
-};
-
-const assertArraysEqual = function (actual, expected) {
-  if (eqArrays(actual, expected) ) {
-    console.log(`🌈 Assertion Passed ${actual} === ${expected}`);
-    return 
-  }
-  if (!eqArrays(actual, expected)){
-    console.log(`🌋 Assertion Failed ${actual} !== ${expected}`);
-    return;
-  }
-};
-
-
-const words = ["ground", "control", "to", "major", "tom"];
+//const eqArrays = require('./eqArrays')
+//const assertArraysEqual = require('./assertArrayEqual')
+//const words = ["ground", "control", "to", "major", "tom"];
 
 const map = function(array, callback) {
   const results = [];
@@ -33,6 +9,8 @@ const map = function(array, callback) {
   }
   return results
 }
+module.exports = map
+/*
 const results = map(words, word => word[0]);
 console.log(results)
 
@@ -56,3 +34,4 @@ const results3 = map(words, word => word.toLowerCase());
 console.log(results3)
 
 assertArraysEqual(results3, ["ground", "control", "to", "major", "tom"])
+*/

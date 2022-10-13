@@ -1,34 +1,4 @@
-const assertEqual = function(actual, expected) {
-  if (actual === expected) {
-    console.log(`🌈 Assertion Passed ${actual} === ${expected}`);
-  }
-  if (actual !== expected) {
-    console.log(`🌋 Assertion Failed ${actual} !== ${expected}`);
-  }
-};
-
-/*const eqObjects = function(object1, object2) {
-  let firstObj= Object.keys(object1);
-  const secondObj = Object.keys(object2);
-
-  if (firstObj.length !== secondObj.length) {
-    return false;
-  } 
-  
-  for (let i = 0; i < firstObj.length; i++) {
-    let val1 = object1[firstObj[i]];
-    let val2 = object2[secondObj[i]]
-    let objects = Object.is(object1) && Object.is(object2)
-    console.log(val1)
-
-    if (objects && isEqual(val1, val2)) {
-      return true
-    } 
-  } 
-  return false
-};
-*/
-
+//const assertEqual = require('./assertEqual')
 
 const eqObjects = function(object1, object2) {
   let firstObj= Object.keys(object1);
@@ -47,10 +17,10 @@ const eqObjects = function(object1, object2) {
 }
 
 
-
+module.exports = eqObjects
 
 //Test Cases
-
+/*
 const test1 = {
   a: "17",
   b: "42"
@@ -82,4 +52,4 @@ assertEqual(eqObjects(cd, dc), true)
 const cd2 = { c: "1", d: ["2", 3, 4] };
 
 console.log(eqObjects(cd, cd2)); // => false
-assertEqual(eqObjects(cd, cd2), false)
+assertEqual(eqObjects(cd, cd2), false) */
